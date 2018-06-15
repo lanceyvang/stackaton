@@ -1,27 +1,34 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import FooterNav from './Components/FooterNav';
+import React from 'react'
+import { createBottomTabNavigator } from 'react-navigation'
+// import { Icon } from 'react-native-elements'
+import { Icon } from 'native-base'
+
+import Map from './Components/Map'
 import CardView from './Components/CardView';
+import Test from './Components/Test'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <CardView />
-    );
-  }
-}
+const TabNav = createBottomTabNavigator({
+    cardView: { //first item is default view
+        screen: CardView,
+        navigationOptions: {
+            tabBarLabel: 'CardView',
+             tabBarIcon: () => <Icon name='home'/>
+        },
+    },
+    map: {
+        screen: Map,
+        navigationOptions: {
+            tabBarLabel: 'CardView',
+            tabBarIcon: () => <Icon name='map'/>
+        }
+    
+},
+    profile: {
+        screen: Test,        
+        navigationOptions: {
+            tabBarLabel: 'Test',
+            tabBarIcon: () => <Icon name='person'/>
+    }
+}})
 
-// <View style={styles.container}>
-//   <Text>Open up App.js to start working on your app!</Text>
-//   <Text>Changes you make will automatically reload.</Text>
-//   <Text>Shake your phone to open the developer menu.</Text>
-// </View>
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+export default TabNav;
