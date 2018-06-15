@@ -1,6 +1,5 @@
 import React from 'react'
 import { createBottomTabNavigator } from 'react-navigation'
-// import { Icon } from 'react-native-elements'
 import { Icon } from 'native-base'
 
 import Map from './Components/Map'
@@ -11,14 +10,14 @@ const TabNav = createBottomTabNavigator({
     cardView: { //first item is default view
         screen: CardView,
         navigationOptions: {
-            tabBarLabel: 'CardView',
+            tabBarLabel: 'Home',
              tabBarIcon: () => <Icon name='home'/>
         },
     },
     map: {
         screen: Map,
         navigationOptions: {
-            tabBarLabel: 'CardView',
+            tabBarLabel: 'Map',
             tabBarIcon: () => <Icon name='map'/>
         }
     
@@ -26,7 +25,7 @@ const TabNav = createBottomTabNavigator({
     profile: {
         screen: Test,        
         navigationOptions: {
-            tabBarLabel: 'Test',
+            tabBarLabel: 'Profile',
             tabBarIcon: () => <Icon name='person'/>
     }
 }})
