@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Image, ScrollView } from 'react-native';
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
-
-
+import { Font } from 'expo';
 //Dummy data renders via map of users
 const users = [
     {
@@ -32,20 +31,28 @@ const users = [
 
 ]
 
-
-
 export default class CardShowcaseExample extends Component {
   constructor(){
     super()
-    this.state = {}
+    this.state = {
+      fontLoaded: false
+    }
   }
+
+ async componentDidMount() {
+   await Font.loadAsync({
+     'Roboto_medium': require('./Roboto_medium.ttf'),
+   });
+   this.setState({ fontLoaded: true });
+ }
+
   render() {
     return (
       <Container>
         <Header />
         <ScrollView>
           {
-            users.map((user, i) => {
+            this.state.fontLoaded && users.map((user, i) => {
               return (
                 <Content key={i}>
                   <Card style={{ flex: 0 }}>
