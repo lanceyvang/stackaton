@@ -30,3 +30,11 @@
 //   }
 // }
 
+//thumbnail user icon
+//tag name
+//location
+//food image url
+//description 
+//likes 
+
+
