@@ -4,7 +4,9 @@ import { Icon } from 'native-base';
 
 import Map from './Components/Map';
 import CardView from './Components/CardView';
-import Test from './Components/Test';
+import Profile from './Components/Profile';
+import ShareReview from './Components/ShareReview';
+import Follow from './Components/Follow';
 // import UploadScreen from './Components/UploadScreen';
 
 const TabNav = createBottomTabNavigator({
@@ -23,22 +25,22 @@ const TabNav = createBottomTabNavigator({
         }
 }, // waiting for working map component
     share: {
-        screen: Map,
+        screen: ShareReview,
         navigationOptions: {
             tabBarLabel: 'Share',
             tabBarIcon: () => <Icon name='ios-add-circle-outline'/>
         }
 },  // waiting for follow component
-    follows: {
-        screen: Map,
+    follow: {
+        screen: Follow,
         navigationOptions: {
-            tabBarLabel: 'Follows',
+            tabBarLabel: 'Follow',
             tabBarIcon: () => <Icon name='heart' />
         }
     },
     // waiting for follow component
     profile: {
-        screen: Test,
+        screen: Profile,
         navigationOptions: {
             tabBarLabel: 'Profile',
             tabBarIcon: () => <Icon name='person'/>
