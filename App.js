@@ -1,10 +1,11 @@
-import React from 'react'
-import { createBottomTabNavigator } from 'react-navigation'
-import { Icon } from 'native-base'
+import React from 'react';
+import { createBottomTabNavigator } from 'react-navigation';
+import { Icon } from 'native-base';
 
-import Map from './Components/Map'
+import Map from './Components/Map';
 import CardView from './Components/CardView';
-import Test from './Components/Test'
+import Test from './Components/Test';
+// import UploadScreen from './Components/UploadScreen';
 
 const TabNav = createBottomTabNavigator({
     cardView: { //first item is default view
@@ -20,10 +21,24 @@ const TabNav = createBottomTabNavigator({
             tabBarLabel: 'Map',
             tabBarIcon: () => <Icon name='map'/>
         }
-    
-},
+}, // waiting for working map component
+    share: {
+        screen: Map,
+        navigationOptions: {
+            tabBarLabel: 'Share',
+            tabBarIcon: () => <Icon name='ios-add-circle-outline'/>
+        }
+},  // waiting for follow component
+    follows: {
+        screen: Map,
+        navigationOptions: {
+            tabBarLabel: 'Follows',
+            tabBarIcon: () => <Icon name='heart' />
+        }
+    },
+    // waiting for follow component
     profile: {
-        screen: Test,        
+        screen: Test,
         navigationOptions: {
             tabBarLabel: 'Profile',
             tabBarIcon: () => <Icon name='person'/>
