@@ -1,58 +1,62 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import React, { Component } from "react";
+import { Text, View } from "react-native";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyBwkfxv_va0TvU54Aho_zaNWxbi6_-XJMM';
+const GOOGLE_MAPS_APIKEY = "AIzaSyBwkfxv_va0TvU54Aho_zaNWxbi6_-XJMM";
 
+const burgerLob = { latitude: 40.7402, longitude: 73.9934 };
 
+const placesToEat = [
+  {
+    tite: "HomeTown HotPot",
+    coordinate: { latitude: 40.7194, longitude: -73.9968 },
+    description: 'Best Hot Pot in NYC'
+  },
+  {
+    title: "Picnic Garden",
+    coordinate: { latitude: 40.33170303, longitude: -73.769417 }
+  }
+];
 
-class Map extends Component {
-	constructor() {
-		super();
-		this.state = {
-      region:{
-        latitude: 37.78825,
-            longitude: -122.4324,
+export default class MapScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <MapView
+          apikey={GOOGLE_MAPS_APIKEY}
+          provider={PROVIDER_GOOGLE}
+          style={{ flex: 10 }}
+          initialRegion={{
+            latitude: 40.7050758,
+            longitude: -74.0091604,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421
-      }
-    };
-	}
-
-	render() {
-    return (
-      <View styles={styles.container}>
-        <Text>Hi</Text>
-        <MapView 
-                apikey={GOOGLE_MAPS_API_KEY}
-                provider={PROVIDER_GOOGLE}
+          }}
+        >
+          
+            {placesToEat.map((place, index) => (
+              <Marker
+              style={{ flex: 1 }}
+                key={index}
+                title={place.title}
+                description={place.description}
+                coordinate={place.coordinate}
                 
-                styles={styles.map} 
-                region={this.state.region}
-                  />
-                 
+                
+              />
+            ))}
+          
+
+          <Marker  coordinate={burgerLob} description={'this is a test!'} />
+          
+        </MapView>
+
       </View>
-    )
-	}
-}
-
-export default Map;
-
-
-const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  map: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0
+    );
   }
-})
+}

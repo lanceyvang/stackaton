@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator, StackNavigator, createStackNavigator } from 'react-navigation';
 import { Icon } from 'native-base';
 
-import Map from './Components/Map';
+import MapScreen from './Components/Map'
 import CardView from './Components/CardView';
 import Profile from './Components/Profile';
 import ShareReview from './Components/ShareReview';
@@ -19,7 +19,7 @@ const TabNav = createBottomTabNavigator({
         },
     },
     map: {
-        screen: Map,
+        screen: MapScreen,
         navigationOptions: {
             tabBarLabel: 'Map',
             tabBarIcon: () => <Icon name='map'/>
