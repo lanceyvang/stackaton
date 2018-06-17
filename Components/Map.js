@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
 const GOOGLE_MAPS_APIKEY = "AIzaSyBwkfxv_va0TvU54Aho_zaNWxbi6_-XJMM";
@@ -10,11 +10,14 @@ const placesToEat = [
   {
     tite: "HomeTown HotPot",
     coordinate: { latitude: 40.7194, longitude: -73.9968 },
-    description: 'Best Hot Pot in NYC'
+    description: 'Best Hot Pot in NYC',
+    image: '../bbq.jpeg'
   },
   {
     title: "Picnic Garden",
-    coordinate: { latitude: 40.33170303, longitude: -73.769417 }
+    coordinate: { latitude: 40.650002, longitude:  -73.949997 },
+    description: 'Best Korean BBQ in Queens',
+    image: '../bbq.jpeg'
   }
 ];
 
@@ -44,6 +47,7 @@ export default class MapScreen extends Component {
               style={{ flex: 1 }}
                 key={index}
                 title={place.title}
+                image={require('../bbq.jpeg')}
                 description={place.description}
                 coordinate={place.coordinate}
                 
@@ -52,7 +56,7 @@ export default class MapScreen extends Component {
             ))}
           
 
-          <Marker  coordinate={burgerLob} description={'this is a test!'} />
+          <Marker  coordinate={burgerLob} title={'testing'} description={'this is a test!'} />
           
         </MapView>
 

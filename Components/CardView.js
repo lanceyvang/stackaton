@@ -31,6 +31,14 @@ const users = [
     likes: 2000000,
     description: 'Fancy Korean BBQ',
     time: '3 hours ago'
+  },{
+    userIcon: 'https://i.imgur.com/y8aEcTa.jpg',
+    tagName: 'hangryeatsnyc2',
+    location: 'Lobster Shack',
+    foodUrl: 'https://i.imgur.com/HPhlpTn.jpg',
+    likes: 1000,
+    description: 'Maine Lobster',
+    time: '4 hours ago'
   }
 ]
 
@@ -73,9 +81,9 @@ export default class CardShowcaseExample extends Component {
         }
         <ScrollView>
           {
-            this.state.fontLoaded && users.map((user) => {
+            this.state.fontLoaded && users.map((user, i) => {
               return (
-                <Content key={user.foodUrl}>
+                <Content key={i}>
                   <Card style={{ flex: 0 }}>
                     <CardItem>
                       <Left>
