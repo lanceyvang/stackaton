@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, StackNavigator, createStackNavigator } from 'react-navigation';
 import { Icon } from 'native-base';
 
 import Map from './Components/Map';

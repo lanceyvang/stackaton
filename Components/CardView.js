@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, ScrollView } from 'react-native';
+import { TouchableOpacity, Image, ScrollView } from 'react-native';
 import { Title, Right, Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
 import { Font } from 'expo';
 
@@ -50,6 +50,7 @@ export default class CardShowcaseExample extends Component {
  }
 
   render() {
+    console.log(this.props.navigation);
     return (
       <Container>
         {
@@ -72,9 +73,9 @@ export default class CardShowcaseExample extends Component {
         }
         <ScrollView>
           {
-            this.state.fontLoaded && users.map((user, i) => {
+            this.state.fontLoaded && users.map((user) => {
               return (
-                <Content key={i}>
+                <Content key={user.foodUrl}>
                   <Card style={{ flex: 0 }}>
                     <CardItem>
                       <Left>
@@ -90,7 +91,9 @@ export default class CardShowcaseExample extends Component {
                     </CardItem>
                     <CardItem>
                       <Body>
-                        <Image source={{ uri: user.foodUrl }} style={{ height: 200, width: 340, flex: 1 }} />
+                        <TouchableOpacity style={{ height: 200, width: 340, flex: 1 }} onPress={() => this.props.navigation.navigate('profile')}>
+                          <Image source={{ uri: user.foodUrl }} style={{ height: 200, width: 340, flex: 1 }} />
+                        </TouchableOpacity>
                       </Body>
                     </CardItem>
                     <CardItem>
@@ -120,104 +123,3 @@ export default class CardShowcaseExample extends Component {
     );
   }
 }
-
-
-// import React, { Component } from 'react';
-// import { TouchableOpacity, ScrollView, Image } from 'react-native';
-// import { Title, Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
-// import SingleView from './SingleView';
-// import { Font } from 'expo';
-
-// const users = [
-//   {
-//     userIcon: 'https://i.imgur.com/8SxyxAg.jpg',
-//     tagName: 'Yang Vang',
-//     location: 'Shake Shack',
-//     foodUrl: 'https://i.imgur.com/2qaSZT3.jpg',
-//     likes: 5000,
-//     description: 'Fancy Burgers'
-//   },
-//   {
-//     userIcon: 'https://i.imgur.com/y8aEcTa.jpg',
-//     tagName: 'hangryeatsnyc',
-//     location: 'Redder Lobster',
-//     foodUrl: 'https://i.imgur.com/HPhlpTn.jpg',
-//     likes: 1000,
-//     description: 'Fancy Lobster'
-//   },
-//   {
-//     userIcon: 'https://i.imgur.com/8SxyxAg.jpg',
-//     tagName: 'foodies',
-//     location: 'Korean BBQ',
-//     foodUrl: 'https://i.imgur.com/8E8e4zW.jpg',
-//     likes: 2000000,
-//     description: 'Fancy Korean BBQ'
-//   }
-
-// ]
-
-// export default class CardImageExample extends Component {
-//   constructor(){
-//     super()
-//     this.state = {
-//       fontLoaded: false
-//     }
-//   }
-
-//   async componentDidMount() {
-//     await Font.loadAsync({
-//       'Roboto_medium': require('./Roboto_medium.ttf'),
-//     });
-//     this.setState({ fontLoaded: true });
-//   }
-
-//   render() {
-//     const { navigate } = this.props.navigation;
-//     console.log('POKEMON', this.state.fontLoaded);
-//     return (
-//       <Container>
-        // <Header>
-        //   <Left>
-        //     <Button transparent>
-        //       <Icon style={{ color: 'black'}} name='camera' />
-        //     </Button>
-        //   </Left>
-        //   <Body>
-        //     <Title>Stackathon</Title>
-        //   </Body>
-        //   <Right>
-        //     <Button transparent>
-        //       <Icon style={{ color: 'black' }} name='ios-paper-plane-outline' />
-        //     </Button>
-        //   </Right>
-        // </Header>
-//         <ScrollView>
-//           {
-//             this.state.fontLoaded && users.map(user => {
-//               return (
-//                 <Content key = {user.foodUrl}>
-//                   <Card>
-//                     <CardItem>
-//                       <Left>
-//                         <Thumbnail source={{ uri: user.userIcon }} />
-//                         <Body>
-//                           <Text>{user.tagName}</Text>
-//                           <Text note>{user.location}</Text>
-//                         </Body>
-//                       </Left>
-//                     </CardItem>
-//                     <CardItem cardBody>
-//                       <TouchableOpacity onPress={() => navigate('profile')}>
-//                         <Image source={{ uri: user.foodUrl }} style={{ height: 250, width: 370, flex: 1 }} />
-//                       </TouchableOpacity>
-//                     </CardItem>
-//                   </Card>
-//                 </Content>
-//               )
-//             })
-//           }
-//         </ScrollView>
-//       </Container>
-//     );
-//   }
-// }
