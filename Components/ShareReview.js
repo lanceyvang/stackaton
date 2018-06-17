@@ -17,7 +17,7 @@ export default class SingleView extends Component {
     this.ratingCompleted = this.ratingCompleted.bind(this);
   }
   ratingCompleted(rating) {
-    console.log("Rating is: " + rating)
+    // console.log("Rating is: " + rating)
   }
   render() {
     return (
