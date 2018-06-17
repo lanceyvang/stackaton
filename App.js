@@ -8,6 +8,7 @@ import Profile from './Components/Profile';
 import ShareReview from './Components/ShareReview';
 import Follow from './Components/Follow';
 // import UploadScreen from './Components/UploadScreen';
+import SingleView from './Components/SingleView';
 
 const TabNav = createBottomTabNavigator({
     cardView: { //first item is default view
@@ -24,10 +25,10 @@ const TabNav = createBottomTabNavigator({
             tabBarIcon: () => <Icon name='map'/>
         }
 }, // waiting for working map component
-    share: {
+    review: {
         screen: ShareReview,
         navigationOptions: {
-            tabBarLabel: 'Share',
+            tabBarLabel: 'Review',
             tabBarIcon: () => <Icon name='ios-add-circle-outline'/>
         }
 },  // waiting for follow component
@@ -38,13 +39,15 @@ const TabNav = createBottomTabNavigator({
             tabBarIcon: () => <Icon name='heart' />
         }
     },
-    // waiting for follow component
+    // waiting for profile component
     profile: {
         screen: Profile,
         navigationOptions: {
             tabBarLabel: 'Profile',
             tabBarIcon: () => <Icon name='person'/>
+        },
+
     }
-}})
+})
 
 export default TabNav;

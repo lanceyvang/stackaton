@@ -1,38 +1,23 @@
-// import React from "react";
-// import { StyleSheet, Text, View } from "react-native";
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: "center",
-//     justifyContent: "center"
-//   }
-// });
-
-// const Test = () => (
-//   <View style={styles.container}>
-//     <Text>Change your profile here.</Text>
-
-//   </View>
-// );
-
-// export default Test;
-
 import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { Right, Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
-import {Rating} from 'react-native-elements';
+import { Rating } from 'react-native-elements';
 
 export default class CardShowcaseExample extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {}
   }
   render() {
     return (
       <Container>
-        <Header />
+        <Header>
+          <Left>
+          <Button transparent>
+            <Icon name='arrow-back' />
+          </Button>
+          </Left>
+        </Header>
         <Content>
           <Card style={{ flex: 0 }}>
             <CardItem>
@@ -52,7 +37,7 @@ export default class CardShowcaseExample extends Component {
                     imageSize={20}
                     readonly
                     startingValue={3}
-                    // style={{ styles.rating }}
+                  // style={{ styles.rating }}
                   />
                 </Body>
               </Right>
