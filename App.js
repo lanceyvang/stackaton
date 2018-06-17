@@ -2,11 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator, StackNavigator, createStackNavigator } from 'react-navigation';
 import { Icon } from 'native-base';
 
-<<<<<<< HEAD
 import MapScreen from './Components/Map'
-=======
-import Map from './Components/Map';
->>>>>>> master
 import CardView from './Components/CardView';
 import Profile from './Components/Profile';
 import ShareReview from './Components/ShareReview';

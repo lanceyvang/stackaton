@@ -1,27 +1,14 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import MapView, {PROVIDER_GOOGLE } from "react-native-maps";
-import MapViewDirections from 'react-native-maps-directions'
+import { Text, View } from "react-native";
+import MapView, {PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
-
-// const origin = {latitude: 37.3318456, longitude: -122.0296002};
-// const destination = {latitude: 37.771707, longitude: -122.4053769};
-// const location = {latitude: 37.798790, longitude: -122.442753}
-// let initialRegion={
-//   latitude: 37.78825,
-//   longitude: -122.4324,
-//   latitudeDelta: 0.0922,
-//   longitudeDelta: 0.0421
-// }
-
-
-const origin = { latitude: 40.5810297, longitude: -73.828232 };
-const destination = { latitude: 40.6577384, longitude: -73.9601139 };
+const hometownHotpot = { latitude: 40.7194, longitude: 73.9968 };
+const destination = { latitude: 37.33170303, longitude: -122.03024001 };
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBwkfxv_va0TvU54Aho_zaNWxbi6_-XJMM';
 
 export default class MapScreen extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       
     };
@@ -29,8 +16,9 @@ export default class MapScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{flex: 1}}>
         <MapView
+         apikey={GOOGLE_MAPS_APIKEY}
           provider={PROVIDER_GOOGLE}
           style={{ flex: 2 }}
           initialRegion={{
@@ -40,17 +28,14 @@ export default class MapScreen extends Component {
             longitudeDelta: 0.0421,
           }}
         >
-          <MapView.Marker coordinate={origin} />
+          <Marker coordinate={origin} />
+          <Marker coordinate={hometownHotpot} />
           
-          <MapViewDirections
-            origin={origin}
-            // destination={this.props.navigation.state.params.currentCoords}
-            apikey={GOOGLE_MAPS_APIKEY}
-            mode="transit"
-          />
+         
         </MapView>
         <View style={{ flex: 1 }}>
         </View>
+        <Text>Friends INFO</Text>
       </View>
     );
   }
