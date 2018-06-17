@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
 const GOOGLE_MAPS_APIKEY = "AIzaSyBwkfxv_va0TvU54Aho_zaNWxbi6_-XJMM";
