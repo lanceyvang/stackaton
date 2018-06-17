@@ -2,9 +2,14 @@ import React, { Component } from "react";
 import { Text, View } from "react-native";
 import MapView, {PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
-const hometownHotpot = { latitude: 40.7194, longitude: 73.9968 };
-const destination = { latitude: 37.33170303, longitude: -122.03024001 };
+
 const GOOGLE_MAPS_APIKEY = 'AIzaSyBwkfxv_va0TvU54Aho_zaNWxbi6_-XJMM';
+
+
+
+placesToEat = [{tite:'HomeTown HotPot', coordinate:{ latitude: 40.7194, longitude: 73.9968 }},
+               {title: 'Picnic Garden', coordinate: {latitude: 37.33170303, longitude: -122.03024001}}
+              ]
 
 export default class MapScreen extends Component {
   constructor(props) {
@@ -28,9 +33,13 @@ export default class MapScreen extends Component {
             longitudeDelta: 0.0421,
           }}
         >
-          <Marker coordinate={origin} />
-          <Marker coordinate={hometownHotpot} />
-          
+          {
+            placesToEat.map((place, index) => (
+              <MapView.Marker key={index}
+                coordinate={place.coordinate}
+                title={place.title}/>
+            ))
+          }
          
         </MapView>
         <View style={{ flex: 1 }}>
