@@ -58,11 +58,11 @@ export default class Home extends Component {
   }
 
   render() {
-    const {navigate} = this.props.navigation
+    const {navigation} = this.props
     return (
       this.state.fontLoaded &&
       <CardView
-        navigate={navigate}
+        navigation={navigation}
         users={this.state.users}
       />
     )

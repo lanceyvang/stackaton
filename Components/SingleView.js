@@ -11,13 +11,6 @@ export default class CardShowcaseExample extends Component {
   render() {
     return (
       <Container>
-        <Header>
-          <Left>
-          <Button transparent>
-            <Icon name='arrow-back' />
-          </Button>
-          </Left>
-        </Header>
         <Content>
           <Card style={{ flex: 0 }}>
             <CardItem>

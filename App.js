@@ -7,10 +7,12 @@ import Profile from './Components/Profile';
 import ShareReview from './Components/ShareReview';
 import Follow from './Components/Follow';
 import Home from './Components/Home';
+import SingleView from './Components/SingleView';
+import StackNavigation from './Components/StackNavigation';
 
 const TabNav = createBottomTabNavigator({
     home: { //first item is default view
-        screen: Home,
+        screen: StackNavigation,
         navigationOptions: {
             tabBarLabel: 'Home',
              tabBarIcon: () => <Icon name='home'/>
