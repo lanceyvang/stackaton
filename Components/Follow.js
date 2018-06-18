@@ -14,16 +14,9 @@ const list = [
     avatarUrl: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Youtuber'
   },
-  // ... // more items
+
 ]
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: "center",
-//     justifyContent: "center"
-//   }
-// });
 
 const Follow = () => {
   return (
