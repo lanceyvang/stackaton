@@ -12,24 +12,7 @@ export default class CardShowcaseExample extends Component {
   render() {
     const users = this.props.users;
     const navigation = this.props.navigation;
-    // console.log(navigation);
-    // {
-    //   <Header>
-    //     <Left>
-    //       <Button transparent>
-    //         <Icon style={{ color: 'black'}} name='camera' />
-    //       </Button>
-    //     </Left>
-    //     <Body>
-    //       <Title>Stackathon</Title>
-    //     </Body>
-    //     <Right>
-    //       <Button transparent>
-    //         <Icon style={{ color: 'black' }} name='ios-paper-plane-outline' />
-    //       </Button>
-    //     </Right>
-    //   </Header>
-    // }
+   
     return (
     <Container>
       {
