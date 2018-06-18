@@ -10,7 +10,26 @@ export default class CardShowcaseExample extends Component {
   }
 
   render() {
-    const users = this.props.users
+    const users = this.props.users;
+    const navigation = this.props.navigation;
+    // console.log(navigation);
+    // {
+    //   <Header>
+    //     <Left>
+    //       <Button transparent>
+    //         <Icon style={{ color: 'black'}} name='camera' />
+    //       </Button>
+    //     </Left>
+    //     <Body>
+    //       <Title>Stackathon</Title>
+    //     </Body>
+    //     <Right>
+    //       <Button transparent>
+    //         <Icon style={{ color: 'black' }} name='ios-paper-plane-outline' />
+    //       </Button>
+    //     </Right>
+    //   </Header>
+    // }
     return (
     <Container>
       {
@@ -50,7 +69,7 @@ export default class CardShowcaseExample extends Component {
                   </CardItem>
                   <CardItem>
                     <Body>
-                      <TouchableOpacity style={{ height: 200, width: 340, flex: 1 }} onPress={() => this.props.navigate('profile')}>
+                      <TouchableOpacity style={{ height: 200, width: 340, flex: 1 }} onPress={() => navigation.navigate('singleview')}>
                         <Image source={{ uri: user.foodUrl }} style={{ height: 200, width: 340, flex: 1 }} />
                       </TouchableOpacity>
                     </Body>

@@ -1,16 +1,16 @@
 import React from 'react';
-import { createBottomTabNavigator, StackNavigator, createStackNavigator } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation';
 import { Icon } from 'native-base';
 
 import MapScreen from './Components/Map'
 import Profile from './Components/Profile';
 import ShareReview from './Components/ShareReview';
 import Follow from './Components/Follow';
-import Home from './Components/Home';
+import StackNavigation from './Components/StackNavigation';
 
 const TabNav = createBottomTabNavigator({
     home: { //first item is default view
-        screen: Home,
+        screen: StackNavigation,
         navigationOptions: {
             tabBarLabel: 'Home',
              tabBarIcon: () => <Icon name='home'/>
