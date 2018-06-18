@@ -3,16 +3,14 @@ import { createBottomTabNavigator, StackNavigator, createStackNavigator } from '
 import { Icon } from 'native-base';
 
 import MapScreen from './Components/Map'
-import CardView from './Components/CardView';
 import Profile from './Components/Profile';
 import ShareReview from './Components/ShareReview';
 import Follow from './Components/Follow';
-// import UploadScreen from './Components/UploadScreen';
-import SingleView from './Components/SingleView';
+import Home from './Components/Home';
 
 const TabNav = createBottomTabNavigator({
-    cardView: { //first item is default view
-        screen: CardView,
+    home: { //first item is default view
+        screen: Home,
         navigationOptions: {
             tabBarLabel: 'Home',
              tabBarIcon: () => <Icon name='home'/>
