@@ -1,23 +1,23 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+// import React from "react";
+// import { StyleSheet, Text, View } from "react-native";
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     alignItems: "center",
+//     justifyContent: "center"
+//   }
+// });
 
-const Profile = () => (
-  <View style={styles.container}>
-    <Text>Change your profile here.</Text>
+// const Profile = () => (
+//   <View style={styles.container}>
+//     <Text>Change your profile here.</Text>
 
-  </View>
-);
+//   </View>
+// );
 
-export default Profile;
+// export default Profile;
 
 // import React, { Component } from 'react';
 // import { Image } from 'react-native';
@@ -91,3 +91,57 @@ export default Profile;
 //     );
 //   }
 // }
+
+import React from 'react';
+import { ListItem } from 'react-native-elements'
+// import { View } from 'react-native';
+// import HeaderBar from './Header';
+import { Container, Header } from 'native-base';
+
+const list = [
+  {
+    title: 'Appointments',
+    icon: 'av-timer'
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff'
+  },
+  {
+    title: 'Appointments',
+    icon: 'av-timer'
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff'
+  },
+  {
+    title: 'Appointments',
+    icon: 'av-timer'
+  },
+  {
+    title: 'Trips',
+    icon: 'flight-takeoff'
+  },
+  // ... // more items
+]
+
+const Profile = () => {
+  return (
+    <Container >
+      <Header />
+      {
+        list.map((item, i) => (
+          <ListItem
+            key={i}
+            title={item.title}
+            leftIcon={{ name: item.icon }}
+          />
+        ))
+      }
+    </Container >
+  )
+}
+
+export default Profile;
+

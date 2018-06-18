@@ -13,21 +13,21 @@ const TabNav = createBottomTabNavigator({
         screen: StackNavigation,
         navigationOptions: {
             tabBarLabel: 'Home',
-             tabBarIcon: () => <Icon name='home'/>
+             tabBarIcon: () => <Icon name='home' />
         },
     },
     map: {
         screen: MapScreen,
         navigationOptions: {
             tabBarLabel: 'Map',
-            tabBarIcon: () => <Icon name='map'/>
+            tabBarIcon: () => <Icon name='map' />
         }
-}, // waiting for working map component
+},
     review: {
         screen: ShareReview,
         navigationOptions: {
             tabBarLabel: 'Review',
-            tabBarIcon: () => <Icon name='ios-add-circle-outline'/>
+            tabBarIcon: () => <Icon name='ios-add-circle-outline' />
         }
 },  // waiting for follow component
     follow: {
@@ -42,7 +42,7 @@ const TabNav = createBottomTabNavigator({
         screen: Profile,
         navigationOptions: {
             tabBarLabel: 'Profile',
-            tabBarIcon: () => <Icon name='person'/>
+            tabBarIcon: () => <Icon name='person' />
         },
 
     }
