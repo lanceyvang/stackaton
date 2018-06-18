@@ -3,21 +3,6 @@ import { StyleSheet, Text, View } from "react-native";
 import { Card, Rating} from 'react-native-elements'
 import { Header, Button, Item, Input, Form, Textarea } from 'native-base';
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: "center",
-//     justifyContent: "center"
-//   }
-// });
-
-// const users = [
-//   {
-//     name: 'brynn',
-//     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-//   },
-//   // ... // more users here
-// ]
 
 export default class SingleView extends Component {
   constructor() {
