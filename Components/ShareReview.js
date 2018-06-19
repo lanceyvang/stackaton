@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Card, Rating} from 'react-native-elements'
-import { Header, Button, Item, Input, Form, Textarea } from 'native-base';
+import { Header, Button, Item, Input, Form, Textarea, Icon } from 'native-base';
 
 
 export default class SingleView extends Component {
@@ -32,7 +32,7 @@ export default class SingleView extends Component {
             style={{ paddingVertical: 10 }}
           />
           <Form>
-            <Textarea rowSpan={15} bordered placeholder="Write your review here." />
+            <Textarea rowSpan={10} bordered placeholder="Write your review here." />
           </Form>
         </Card>
         <Button block danger style={{margin: 15}}>
