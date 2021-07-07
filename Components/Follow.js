@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { ListItem } from 'react-native-elements'
-import { Header } from 'native-base';
+import { Header, Item, Icon, Button, Input } from 'native-base';
 
 const list = [
   {
@@ -21,7 +21,16 @@ const list = [
 const Follow = () => {
   return (
     <View >
-      <Header />
+      <Header searchBar rounded>
+        <Item>
+          <Icon name="ios-search" />
+          <Input placeholder="Search" />
+          <Icon name="ios-people" />
+        </Item>
+        <Button transparent>
+          <Text>Search</Text>
+        </Button>
+      </Header>
       {
         list.map((l, i) => (
           <ListItem

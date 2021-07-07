@@ -6,13 +6,15 @@ export default class CardShowcaseExample extends Component {
   constructor(){
     super()
     this.state = {
+      users: []
     }
   }
 
   render() {
+    // console.log(this.state);
     const users = this.props.users;
     const navigation = this.props.navigation;
-   
+
     return (
     <Container>
       {
@@ -23,7 +25,7 @@ export default class CardShowcaseExample extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Stackathon</Title>
+            <Title>Good Taste</Title>
           </Body>
           <Right>
             <Button transparent>
